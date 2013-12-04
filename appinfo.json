@@ -1,0 +1,23 @@
+{
+    "versionLabel": "1.0",
+    "uuid": "0c4ada33-5290-4190-8107-c90c396bd10b",
+    "appKeys": {
+        "date": 0,
+        "currency": 1,
+        "sell_rate": 3,
+        "buy_rate": 2
+    },
+    "longName": "SBM Forex",
+    "versionCode": 1,
+    "capabilities": [
+        ""
+    ],
+    "shortName": "SBM Forex",
+    "companyName": "Ashvin",
+    "watchapp": {
+        "watchface": false
+    },
+    "resources": {
+        "media": []
+    }
+}
