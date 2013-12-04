@@ -31,15 +31,13 @@ static void in_received_handler(DictionaryIterator *iter, void *context) {
 	}
 }
 
-/*
 static void in_dropped_handler(AppMessageResult reason, void *context) {
-	text_layer_set_text(result_txt_layer, "App Message Dropped!");
+	APP_LOG(APP_LOG_LEVEL_DEBUG, "App Message Dropped!");
 }
 
 static void out_failed_handler(DictionaryIterator *failed, AppMessageResult reason, void *context) {
-	text_layer_set_text(result_txt_layer, "App Message Failed to Send!");
+	APP_LOG(APP_LOG_LEVEL_DEBUG, "App Message Failed to Send!");
 }
-*/
 
 static void select_click_handler(ClickRecognizerRef recognizer, void *context) {
 	text_layer_set_text(result_txt_layer, "Refreshing...");
@@ -89,10 +87,8 @@ static void deinit(void) {
 
 static void app_message_init(void) {
 	app_message_register_inbox_received(in_received_handler);
-  	/*
   	app_message_register_inbox_dropped(in_dropped_handler);
   	app_message_register_outbox_failed(out_failed_handler);
-  	*/
 
 	app_message_open(128, 128);
 }

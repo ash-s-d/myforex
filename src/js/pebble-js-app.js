@@ -3,6 +3,7 @@ Pebble.addEventListener(
 	"ready",
 	function(e) {
 		fetchForexData();
+
 		//Pebble.showSimpleNotificationOnPebble("TEST", "Test");
 	}
 );
@@ -40,12 +41,12 @@ function fetchForexData() {
 											Pebble.sendAppMessage(data);
 										}
 									}else{
-										Pebble.sendAppMessage({"0": "ERROR"});
+										console.log("Error!");
 									}
 					};
 
 	req.onerror = function(e) {
-		Pebble.sendAppMessage({"0": "ERROR"});
+		console.log("Error!");
 	};
 
 	req.send(null);
