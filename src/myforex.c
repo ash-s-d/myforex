@@ -22,12 +22,22 @@ static void send_msg(void) {
 }
 
 static void in_received_handler(DictionaryIterator *iter, void *context) {
-	Tuple *tuple = dict_read_first(iter); 	
+	char *txt;
+
+	Tuple *date_tuple = dict_find(iter, 0); 	
 	
-	if(tuple) {
-		text_layer_set_text(result_txt_layer, tuple->value->cstring);
-	}else{
-		text_layer_set_text(result_txt_layer, "No data!");
+	if(date_tuple) {
+		txt = text_layer_get_text(result_txt_layer);
+
+		text_layer_set_text(result_txt_layer, txt + date_tuple->value->cstring + "\n");
+	}
+
+	Tuple *currency_tuple = dict_find(iter, 1); 	
+	
+	if(date_tuple) {
+		txt = text_layer_get_text(result_txt_layer);
+
+		text_layer_set_text(result_txt_layer, txt + currency_tuple->value->cstring + "\n");
 	}
 }
 
