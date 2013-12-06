@@ -27,7 +27,7 @@ static void in_received_handler(DictionaryIterator *iter, void *context) {
 	Tuple *date_tuple = dict_find(iter, 0);
 	
 	if(date_tuple) {
-		txt = text_layer_get_text(result_txt_layer);
+		*txt = text_layer_get_text(result_txt_layer);
 
 		text_layer_set_text(result_txt_layer, strcat(strcat(txt, date_tuple->value->cstring), "\n"));
 	}
@@ -35,7 +35,7 @@ static void in_received_handler(DictionaryIterator *iter, void *context) {
 	Tuple *currency_tuple = dict_find(iter, 1);
 	
 	if(currency_tuple) {
-		txt = text_layer_get_text(result_txt_layer);
+		*txt = text_layer_get_text(result_txt_layer);
 
 		text_layer_set_text(result_txt_layer, strcat(strcat(txt, currency_tuple->value->cstring), "\n"));
 	}
@@ -43,7 +43,7 @@ static void in_received_handler(DictionaryIterator *iter, void *context) {
 	Tuple *buy_rate_tuple = dict_find(iter, 2); 
 	
 	if(buy_rate_tuple) {
-		txt = text_layer_get_text(result_txt_layer);
+		*txt = text_layer_get_text(result_txt_layer);
 
 		text_layer_set_text(result_txt_layer, strcat(strcat(txt, buy_rate_tuple->value->cstring), "\n"));
 	}
@@ -51,7 +51,7 @@ static void in_received_handler(DictionaryIterator *iter, void *context) {
 	Tuple *sell_rate_tuple = dict_find(iter, 3); 
 	
 	if(sell_rate_tuple) {
-		txt = text_layer_get_text(result_txt_layer);
+		*txt = text_layer_get_text(result_txt_layer);
 
 		text_layer_set_text(result_txt_layer, strcat(strcat(txt, sell_rate_tuple->value->cstring), "\n"));
 	}
